@@ -1,5 +1,7 @@
 # 第一周：从单图到可比较的基线
 
+配套教学笔记本：[week1_llava_baseline.ipynb](../src/week1_llava_baseline.ipynb)。在云端 JupyterLab 打开，先按中文说明逐格完成第 0–6 节的环境检查和单图推理，再准备真实标注并做批量评测。代码结构与评分逻辑已做本地检查，GPU 推理和实际环境兼容性仍需在云端验证。
+
 ## 1. 跑通一张图
 
 - 云端创建独立环境，按 [LLaVA HF 文档](https://huggingface.co/docs/transformers/model_doc/llava) 运行 `llava-hf/llava-1.5-7b-hf` 的官方示例。
