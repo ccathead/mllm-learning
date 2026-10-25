@@ -1,50 +1,6 @@
-# Python environments and caches
+data/*
+!data/.gitkeep
+outputs/
+.cache/
 __pycache__/
-*.py[cod]
-.venv/
-venv/
-env/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.ipynb_checkpoints/
-*.egg-info/
-build/
-dist/
-
-# Credentials and local settings
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-.codex/
-.agents/
-.obsidian/
-.vscode/
-.idea/
-
-# External source, datasets, weights, and raw outputs
-/external/
-/data/
-/checkpoints/
-/outputs/
-/runs/
-/wandb/
-/.cache/
-*.safetensors
-*.pt
-*.pth
-*.ckpt
-*.bin
-*.gguf
-*.onnx
-*.log
-*.zip
-*.tar
-*.tar.gz
-
-# OS files
-Thumbs.db
-Desktop.ini
-.DS_Store
+*.pyc
