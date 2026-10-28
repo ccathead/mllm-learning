@@ -1,0 +1,14 @@
+--index-url https://pypi.tuna.tsinghua.edu.cn/simple
+--extra-index-url https://mirror.sjtu.edu.cn/pytorch-wheels/cu124/
+
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+transformers==4.57.1
+accelerate==1.15.0
+huggingface-hub==0.36.2
+numpy==1.26.4
+pillow
+sentencepiece
+protobuf
+safetensors
+ipykernel
