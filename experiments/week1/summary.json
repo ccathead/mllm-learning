@@ -1,0 +1,211 @@
+{
+    "report_date":  "2026-10-28",
+    "experiment_recorded_at_utc":  "2026-10-25T11:22:27.642020+00:00",
+    "task":  "open-ended image question answering",
+    "source_run":  "outputs/w1-20261025T112208.803622Z",
+    "predictions_file":  "predictions-113405.431529.jsonl",
+    "review_file":  "predictions-113405.431529-manual-review.jsonl",
+    "repository_commit_at_run":  "892416b8ed2d6b788e009f5fe4c76f77606f9b74",
+    "model_id":  "llava-hf/llava-1.5-7b-hf",
+    "model_revision":  "b234b804b114d9e37bb655e11cbbb5f5e971b7a9",
+    "environment":  {
+                        "python":  "3.10.22 (main, Oct  1 2026, 20:14:04) [GCC 14.3.0]",
+                        "torch":  "2.6.0+cu124",
+                        "transformers":  "4.57.1",
+                        "cuda_runtime":  "12.4",
+                        "gpu":  "NVIDIA GeForce RTX 4090 D",
+                        "gpu_total_gib":  23.52716064453125
+                    },
+    "configuration":  {
+                          "model_id":  "llava-hf/llava-1.5-7b-hf",
+                          "model_revision":  "b234b804b114d9e37bb655e11cbbb5f5e971b7a9",
+                          "generation":  {
+                                             "max_new_tokens":  128,
+                                             "do_sample":  false,
+                                             "num_beams":  1
+                                         },
+                          "seed":  42,
+                          "dtype":  "torch.float16",
+                          "device":  "cuda:0",
+                          "batch_size":  1,
+                          "question":  "画面中有两个人坐在路边，他们穿着什么颜色的工作服？"
+                      },
+    "evaluation_configuration":  {
+                                     "task":  "open-ended image question answering",
+                                     "prompt_policy":  "请仅根据图片中的可见信息回答问题。回答简洁明确；如果图片无法支持确定答案，请说明无法确定。不要猜测图片外的信息。",
+                                     "scoring":  "manual 0-2 per sample using its scoring_criteria; 2=correct, 1=partially correct, 0=incorrect or unsupported",
+                                     "generation":  {
+                                                        "max_new_tokens":  128,
+                                                        "do_sample":  false,
+                                                        "num_beams":  1
+                                                    }
+                                 },
+    "dataset_annotation_sha256":  "3171b3aa9ca1ab708e8047cdaadc05989d769ef0da15f5f7bece9c3ab6389b0a",
+    "samples":  30,
+    "score_sum":  38,
+    "possible_score":  60,
+    "mean_score_0_to_2":  1.2666666666666666,
+    "normalized_score_0_to_1":  0.6333333333333333,
+    "score_distribution":  {
+                               "score_0":  7,
+                               "score_1":  8,
+                               "score_2":  15
+                           },
+    "full_credit_rate":  0.5,
+    "category_statistics":  [
+                                {
+                                    "category":  "action_recognition",
+                                    "samples":  2,
+                                    "score_sum":  3,
+                                    "mean_score_0_to_2":  1.5,
+                                    "score_0":  0,
+                                    "score_1":  1,
+                                    "score_2":  1
+                                },
+                                {
+                                    "category":  "attribute_recognition",
+                                    "samples":  5,
+                                    "score_sum":  7,
+                                    "mean_score_0_to_2":  1.4,
+                                    "score_0":  1,
+                                    "score_1":  1,
+                                    "score_2":  3
+                                },
+                                {
+                                    "category":  "counting",
+                                    "samples":  2,
+                                    "score_sum":  2,
+                                    "mean_score_0_to_2":  1,
+                                    "score_0":  1,
+                                    "score_1":  0,
+                                    "score_2":  1
+                                },
+                                {
+                                    "category":  "object_recognition",
+                                    "samples":  9,
+                                    "score_sum":  9,
+                                    "mean_score_0_to_2":  1,
+                                    "score_0":  3,
+                                    "score_1":  3,
+                                    "score_2":  3
+                                },
+                                {
+                                    "category":  "scene_understanding",
+                                    "samples":  4,
+                                    "score_sum":  7,
+                                    "mean_score_0_to_2":  1.75,
+                                    "score_0":  0,
+                                    "score_1":  1,
+                                    "score_2":  3
+                                },
+                                {
+                                    "category":  "spatial_relation",
+                                    "samples":  5,
+                                    "score_sum":  8,
+                                    "mean_score_0_to_2":  1.6,
+                                    "score_0":  0,
+                                    "score_1":  2,
+                                    "score_2":  3
+                                },
+                                {
+                                    "category":  "text_reading",
+                                    "samples":  2,
+                                    "score_sum":  2,
+                                    "mean_score_0_to_2":  1,
+                                    "score_0":  1,
+                                    "score_1":  0,
+                                    "score_2":  1
+                                },
+                                {
+                                    "category":  "visual_detail",
+                                    "samples":  1,
+                                    "score_sum":  0,
+                                    "mean_score_0_to_2":  0,
+                                    "score_0":  1,
+                                    "score_1":  0,
+                                    "score_2":  0
+                                }
+                            ],
+    "error_categories":  [
+                             {
+                                 "label":  "动作识别不具体",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "动作识别错误",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "计数错误",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "空间关系错误",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "空间关系信息不完整",
+                                 "count":  2
+                             },
+                             {
+                                 "label":  "属性识别错误",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "文字识别错误",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "物体类别未识别",
+                                 "count":  1
+                             },
+                             {
+                                 "label":  "物体识别不具体",
+                                 "count":  2
+                             },
+                             {
+                                 "label":  "物体识别不准确",
+                                 "count":  2
+                             },
+                             {
+                                 "label":  "物体识别错误",
+                                 "count":  2
+                             }
+                         ],
+    "performance":  {
+                        "timing_scope":  "processor + transfer to device + generate + CUDA synchronization; excludes image file open, answer decoding, model loading and JSONL writes",
+                        "total_inference_seconds":  19.606974206864834,
+                        "mean_inference_seconds":  0.65356580689549448,
+                        "median_inference_seconds":  0.55955104157328606,
+                        "min_inference_seconds":  0.22937677055597305,
+                        "max_inference_seconds":  2.54865088313818,
+                        "total_new_tokens":  874,
+                        "reached_max_new_tokens_ids":  [
+                                                           "coco_193926_q1"
+                                                       ],
+                        "peak_allocated_gib":  13.57567310333252,
+                        "peak_reserved_gib":  13.71484375
+                    },
+    "validation":  {
+                       "prediction_count":  30,
+                       "review_count":  30,
+                       "unique_prediction_ids":  30,
+                       "unique_review_ids":  30,
+                       "invalid_scores":  0,
+                       "inference_errors":  0,
+                       "unanswered_predictions":  0,
+                       "review_prediction_field_mismatches":  0,
+                       "annotation_prediction_field_mismatches":  0,
+                       "local_annotation_hash_matches":  true,
+                       "matching_image_hashes":  30,
+                       "metrics_match_recalculation":  true
+                   },
+    "limitations":  [
+                        "Small, unbalanced, selected COCO image QA set; not an official COCO VQA benchmark.",
+                        "Manual 0-2 scores with no recorded independent rater agreement; some rubric interpretations were added in review notes.",
+                        "Normalized score is not accuracy; full-credit rate is a separate measure.",
+                        "Occlusion comparison is one sample and uses a different question suffix from the 30-sample evaluation.",
+                        "No training, fine-tuning, loss, gradient or systematic uncertainty evaluation performed.",
+                        "Repository commit does not capture possible uncommitted notebook edits; supplied notebook is hashed in evidence-manifest.json."
+                    ]
+}

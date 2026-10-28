@@ -1,6 +1,51 @@
-data/*
-!data/.gitkeep
-outputs/
-.cache/
+# Local datasets, raw experiment outputs and third-party repositories
+/data/*
+!/data/.gitkeep
+/outputs/
+/checkpoints/
+/external/
+/logs/
+/runs/
+/wandb/
+/lightning_logs/
+/week*-results.tar.gz
+
+# Model weights and exported models
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.gguf
+
+# Jupyter autosaves and temporary cloud diagnostics (any directory)
+.ipynb_checkpoints/
+cloud_debug_*/
+
+# Python environments, caches and build artifacts
+.venv/
+venv/
 __pycache__/
-*.pyc
+*.py[cod]
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipython/
+*.egg-info/
+/build/
+/dist/
+
+# Local secrets and editor / OS files
+.env
+.env.*
+!.env.example
+!.env.template
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
