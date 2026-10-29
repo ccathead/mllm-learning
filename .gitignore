@@ -8,6 +8,8 @@
 /runs/
 /wandb/
 /lightning_logs/
+/chapter*-results.tar.gz
+/ch*-results.tar.gz
 /week*-results.tar.gz
 
 # Model weights and exported models

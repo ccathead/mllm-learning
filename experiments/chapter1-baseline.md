@@ -1,11 +1,11 @@
-# Week 1：LLaVA 开放式视觉问答基线与错误分析
+# 第1章：LLaVA 开放式视觉问答基线与错误分析
 
 - 实验日期：2026-10-25；报告整理日期：2026-10-28。
 - 状态：单图推理、30 题评测、人工评分、视觉特征观察及单样本遮挡实验完成。
 - 任务：对 30 张 COCO 图片分别回答一个中文问题，输出开放式文本。
 - 范围：使用已有模型做推理与评测；未进行训练、微调、loss 或梯度检查。
 
-## 1. 本周结论
+## 1. 本章结论
 
 1. 已在单张 RTX 4090 D 上跑通 LLaVA 1.5 7B 的 FP16 推理，并建立可供后续比较的 30 题基线。30 条预测全部产生非空回答，记录的运行错误为 0。
 2. 采用已填写的人工整数 0–2 分，总分 **38/60**，平均 **1.2667/2**，归一化得分 **63.33%**。其中 **15 题满分、8 题部分正确、7 题零分**。满分题比例为 **50.00%**；归一化得分不等于准确率。
@@ -30,11 +30,13 @@
 | 批处理 | 复用同一模型逐张处理，GPU `batch_size=1` |
 | 生成参数 | `max_new_tokens=128`，`do_sample=False`，`num_beams=1` |
 | 随机种子 | 42；不据此承诺跨硬件或环境逐 token 一致 |
-| 运行入口 | [src/week1_llava_baseline.ipynb](../src/week1_llava_baseline.ipynb)，云端 Jupyter 内核 `llava-week1` |
+| 运行入口 | [src/chapter1_llava_baseline.ipynb](../src/chapter1_llava_baseline.ipynb)，云端 Jupyter 内核 `llava-week1` |
 | 原始运行目录 | [outputs/w1-20261025T112208.803622Z/](../outputs/w1-20261025T112208.803622Z/) |
-| 依赖快照 | [week1/requirements-freeze.txt](week1/requirements-freeze.txt) |
+| 依赖快照 | [chapter1/requirements-freeze.txt](chapter1/requirements-freeze.txt) |
 
-`repository_commit` 只记录当时 HEAD，不能证明运行时工作区没有未提交改动。当前提供的 notebook、配置和原始结果另以 SHA256 记录在 [evidence-manifest.json](week1/evidence-manifest.json)，便于识别本次整理所使用的文件。
+`repository_commit` 只记录当时 HEAD，不能证明运行时工作区没有未提交改动。报告所依据的原始 notebook、配置和结果以 SHA256 记录在 [evidence-manifest.json](chapter1/evidence-manifest.json)。
+
+学习材料已改为章节命名，当前入口为 `src/chapter1_llava_baseline.ipynb`。改名前的 [notebook 原始副本](../outputs/w1-20261025T112208.803622Z/notebook-at-report.ipynb) 保留了报告整理时的字节内容：校验清单中的 `path` 与 `sha256` 描述历史文件，`archived_copy` 指向可核验副本，`current_path` 指向当前入口。历史实验目录 `outputs/w1-.../` 和环境名 `llava-week1` 保留原名，新运行使用 `outputs/ch1-.../`、`outputs/ch2-.../`。
 
 复现时用已保存的模型 revision 同时加载 processor 和模型；使用对应 Jupyter 内核，从 notebook 环境检查及配置开始顺序执行。安装依赖的格子按 notebook 说明单独处理，不将“Run All”视作已经验证的完整运行命令。保留原始目录，新的推理另建运行目录。
 
@@ -148,7 +150,7 @@
   → processor 后 pixel_values       (1, 3, 336, 336)
   → 选取后的视觉特征                (1, 576, 1024)
   → multi_modal_projector           (1, 576, 4096)
-  → 语言模型的图文融合输入          Week 2 待实际跟踪
+  → 语言模型的图文融合输入第2章待实际跟踪
 ```
 
 该单图提示词的 `input_ids` / `attention_mask` 均为 `(1,623)`，其中图像 token 数为 576；语言模型 hidden size 为 4096。这里的 623 属于不附加评测统一指令的单图示例，不能用作全部 30 题的固定序列长度。
@@ -172,27 +174,27 @@
 
 下一轮固定中性问题及提示词，对同一图片比较原图、关键区域遮挡、等面积背景遮挡，并保存遮挡坐标。若还要比较提示词，应另设实验，每次只改变一个因素。
 
-## 8. 局限与 Week 2 下一步
+## 8. 局限与第2章下一步
 
 这份基线的用途是验证流程和支持后续受控比较。样本量小、类别不均衡，且选图集中包含 person 与 bicycle，不支持泛化为标准 benchmark 分数。数据是否出现在模型预训练中未核验，也没有建立独立的未知信息题组，因此不报告泛化能力或“不确定时编造比例”。
 
-30 张图已用于观察错误和讨论后续策略，之后应将其视为开发对照集。Week 3 若用它选择提示词或裁剪策略，需要另留未参与选择的新图片做最终评估；划分时避免相同或高度相似图片跨集合。
+30 张图已用于观察错误和讨论后续策略，之后应将其视为开发对照集。第3章若用它选择提示词或裁剪策略，需要另留未参与选择的新图片做最终评估；划分时避免相同或高度相似图片跨集合。
 
-建议按以下顺序进入 Week 2：
+建议按以下顺序进入第2章：
 
 1. **处理器与 token（约 1–2 小时）**：沿当前安装版本的 `LlavaProcessor.__call__` 追踪图像占位符展开；打印不同问题下图像 token 数和完整序列长度。
 2. **图文融合（约 2–3 小时）**：沿 `get_image_features`、`get_placeholder_mask` 和 `LlavaModel.forward` 查看 `inputs_embeds` 的形成；在语言模型入口临时记录形状，验证占位符位置的向量与 projector 输出对应。
 3. **受控实验（约 1–2 小时）**：完成上述关键区域 / 背景遮挡对照，区分输入变化、提示词变化与推断的机制。
 4. **实现对照（约 1–2 小时）**：对照原生 LLaVA 与所选版本 MiniGPT-4 的连接模块，记录源码版本、输入输出形状、连接方式和冻结策略；MiniGPT-4 先读源码。
-5. **验收**：用实际张量和函数路径解释“576 个视觉向量如何进入 LLM”，把证据写入 `notes/`。之后进入 Week 3，同条件比较 Qwen2.5-VL，并提前固定评分边界与数据划分。
+5. **验收**：用实际张量和函数路径解释“576 个视觉向量如何进入 LLM”，把证据写入 `notes/`。之后进入第3章，同条件比较 Qwen2.5-VL，并提前固定评分边界与数据划分。
 
 ## 9. 证据与归档
 
 | 文件 | 用途 |
 |---|---|
-| [week1/summary.json](week1/summary.json) | 本次重算的总体、分类、时间、显存与核验摘要 |
-| [week1/evidence-manifest.json](week1/evidence-manifest.json) | 原始文件、当前 notebook、标注及图片的 SHA256 |
-| [week1/requirements-freeze.txt](week1/requirements-freeze.txt) | 本次成功环境的依赖快照，原样复制 |
+| [chapter1/summary.json](chapter1/summary.json) | 本次重算的总体、分类、时间、显存与核验摘要 |
+| [chapter1/evidence-manifest.json](chapter1/evidence-manifest.json) | 原始文件、当前 notebook、标注及图片的 SHA256 |
+| [chapter1/requirements-freeze.txt](chapter1/requirements-freeze.txt) | 本次成功环境的依赖快照，原样复制 |
 | [原始预测](../outputs/w1-20261025T112208.803622Z/predictions-113405.431529.jsonl) | 30 题问题、原始回答、完整 prompt、计时和资源数据 |
 | [人工评分](../outputs/w1-20261025T112208.803622Z/predictions-113405.431529-manual-review.jsonl) | 最终分数、原始错误分类及复核备注 |
 | [原始 metrics](../outputs/w1-20261025T112208.803622Z/metrics.json) | notebook 自动生成的汇总，保留未修改 |

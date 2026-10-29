@@ -1,0 +1,144 @@
+{
+  "created_on": "2026-10-28",
+  "algorithm": "SHA256",
+  "path_base": "repository root",
+  "source_run": "outputs/w1-20261025T112208.803622Z",
+  "files": [
+    {
+      "path": "data/my_vlm_test_set/annotation_template.jsonl",
+      "bytes": 11983,
+      "sha256": "3171b3aa9ca1ab708e8047cdaadc05989d769ef0da15f5f7bece9c3ab6389b0a"
+    },
+    {
+      "path": "data/my_vlm_test_set/selected_images.csv",
+      "bytes": 5511,
+      "sha256": "a496f7c6656afd720267c35b62edb818886f28b5fa686f76e176e1a6b0af9017"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/config.json",
+      "bytes": 377,
+      "sha256": "0290b31425857c47af9b015d0884aa242baaf21db77091cb597c2028ab18aadf"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/dataset.json",
+      "bytes": 2827,
+      "sha256": "6bcc2cb41190ca09dc03b62db1041b0e4319e9a275a6caf428480d3015e1aead"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/environment.json",
+      "bytes": 2272,
+      "sha256": "d2911d0942aa4616415d6170bab75af39ca34e6f37eb4df6bb990b68bd5348b2"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/evaluation-config.json",
+      "bytes": 460,
+      "sha256": "d3661afb9886085c776a7217e7a025c76f5b80c7e5a09af9c0889f857479dd26"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/metrics.json",
+      "bytes": 465,
+      "sha256": "e3fc186486c33c3f4bf46f2551118189f80c1d9a602828d8d1e266613b929f64"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/model-load.json",
+      "bytes": 90,
+      "sha256": "7d49685d478e4dadc5f96bb1f3a4f7a2414553a7f29cb3ec9f88fb60c34b9af9"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/occluded.png",
+      "bytes": 442928,
+      "sha256": "bf66bccad2a277294308086ace5e9897c04b039bc4cf04ba6ba70ae1c18a0969"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/occlusion-comparison.json",
+      "bytes": 895,
+      "sha256": "0081a3c3d9f0bcb4822730b8f9975df2ac7c1dacd07eb0cd052caeed52e1cda9"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/predictions-113405.431529.jsonl",
+      "bytes": 27273,
+      "sha256": "7536cb5b98ca69f097d0abdef6a0437867751a923d8eb77e89714b080d302a67"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/predictions-113405.431529-manual-review.jsonl",
+      "bytes": 17978,
+      "sha256": "dada3788a8c894bbdabba348874f3bfd52e4278ff53942e3bb5f1eb38af78f23"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/report.md",
+      "bytes": 906,
+      "sha256": "149c80da4a776f081b79a53875acf421e12fa64c29d56116d73540d551545448"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/requirements-freeze.txt",
+      "bytes": 1488,
+      "sha256": "757aea8ac781d01c73f09d0b0e89f79664848995244829b00c8e07ac23cc61f2"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/single-image.json",
+      "bytes": 523,
+      "sha256": "90ce2a4fbd64fa0e4a25d705df861eb1ca4dc84d385da6e089e03e1618f5fec3"
+    },
+    {
+      "path": "outputs/w1-20261025T112208.803622Z/tensor-trace.json",
+      "bytes": 429,
+      "sha256": "c7a40f2796c6a9e0feef826e6033e2c4cca7262ae22a6b5614192a7efc3bde09"
+    },
+    {
+      "path": "src/requirements.txt",
+      "bytes": 308,
+      "sha256": "a091e0d1a64119c35044d79be66a55a5523a3d75bc8499036d96f81a89bc4848"
+    },
+    {
+      "path": "src/week1_llava_baseline.ipynb",
+      "bytes": 1704453,
+      "sha256": "501b6bd6c2af73feafef83cbeff0741d37efa6df3d4d4e01fec705a1f171c092",
+      "archived_copy": "outputs/w1-20261025T112208.803622Z/notebook-at-report.ipynb",
+      "current_path": "src/chapter1_llava_baseline.ipynb"
+    }
+  ],
+  "dataset_image_sha256": {
+    "coco_8211_q1": "8a52b7177994a207b4f463d591c3c0f1ffd00b42dcdf17cc8f8984bfae17d110",
+    "coco_40083_q1": "89b9c3771c9428e0e25134cde9bc0a962318a477d267ef47f8e1872526207da7",
+    "coco_59635_q1": "8d5bb0880f202267b97c5da77409f541acad3943ecfe8647c7d612d6f6bb27b8",
+    "coco_82821_q1": "1b37954bebee5b6bf285d5bb47e47f7bf99fa7ef9e7c57d70638bc3332b9eb99",
+    "coco_97988_q1": "1d8288339c7cdfdc5dc57881aadbbf0319657138058880d60eb8daa521995389",
+    "coco_99114_q1": "609688ffdec87ab6416ee436ebc6520cab61d8f4db8d1e5072eb1d1772cffa98",
+    "coco_119516_q1": "ee4d278eecc42f9c6830e030207fbabe888aebb36c58681f034f27081594d8c9",
+    "coco_132375_q1": "ca75ab6b76166e25cb6e7f31cf21c769aad4e32433d6f87047010f0f4a2d8aa5",
+    "coco_167486_q1": "1198b8e38fa916c2dd72b00a17ab8944f52547aaee81b3098b9c1ca55e6fa0d1",
+    "coco_184324_q1": "5bfec85c40197744fc7fa8262a0a0e14ad1a6fc0e11cee4b7b0c5df97a146107",
+    "coco_184611_q1": "641165f214240ca23cb4b8ef4df24b6e9d325131f5c2ea51d2a7ee0112d217d0",
+    "coco_190753_q1": "44e80dccef157b3c8db7096d10e78386c29d96bc901564a6fb9f43ed915c3b4e",
+    "coco_193926_q1": "fca3d27a492bbb4bd795d497f4883123c23050a8dbb0b26fb4d4d6c4ac9af975",
+    "coco_226903_q1": "24c4fbe63fc6255b8a471b5c839a51a7f3351144b363e6e17060080f8b10ae1a",
+    "coco_227399_q1": "8215d52085a5c93de3aeb09ee0a8be74c2b7af3c49f3c8068d72edd745809773",
+    "coco_251140_q1": "79008d18027248dca70b4b61895deb7242f5f1179befdca36f562121b188291e",
+    "coco_296649_q1": "3cc7ef25567cdb68f5e51574c058e2764ef8ab36d4a31e9e31c423f8d78612fc",
+    "coco_306136_q1": "4409dddd7ba4c58cd3c8f37f170075677db1284d34e75bd312b9cb84f528268d",
+    "coco_350023_q1": "93ae8ddf49d3289ccb6262bd74f9cab4b625283cc57d3013c95ff9651cea7c48",
+    "coco_350122_q1": "b085635c2fe5c3ed28ace5f74ccd209027cf13ef40d623070860274757518c34",
+    "coco_361103_q1": "9188a63875d42908534f9192719b02a0fb26f110398ce6b052df664cf4aa5e55",
+    "coco_370208_q1": "074ac425cb005165a87fdcea693f1a229ffb1020c6e8b363acfc9a25c02bcb9b",
+    "coco_378139_q1": "b96db615cd9c52b7eefc387d5e0575bde7af39b9117d3dcea0a7831a25ce74cc",
+    "coco_378515_q1": "edf5f635541bcc6558db28535ed8acfed4439cfca1fdef1dae8ce09a237ec25f",
+    "coco_388903_q1": "fda0c5d343da35be2927eaa1fc908a46c640d1e604b03d3b8e5ca891a27d3f32",
+    "coco_403565_q1": "7728a697d1e46e038de2baebdd0c18bb8aa8646ff67ded3ea2c5621654c88e62",
+    "coco_458223_q1": "b1dd74ccf72451429d9444fec031e55abf94038b8fcc94e4abc20f4cc74d22fa",
+    "coco_472623_q1": "3b1a4b3e7a06e2f67ff42f2821f089e5038d53d9a06de390a23f65652af85d6d",
+    "coco_549390_q1": "58869aab26773098433074432a7f042d395d33d1c0f8c293df3168b7e8ec2bc8",
+    "coco_571857_q1": "d8771d52ba37b5ebfff1a5dee278d11dfed9c4b3e67a19c89e21fc8000a148c0"
+  },
+  "verified_local_image_hash_matches": 30,
+  "note": "Original data and outputs remain in their original locations and are ignored by Git. Hashes identify the supplied artifacts; files were not regenerated on GPU.",
+  "naming_migration": {
+    "date": "2026-10-28",
+    "renamed_paths": {
+      "src/week1_llava_baseline.ipynb": "src/chapter1_llava_baseline.ipynb",
+      "src/week2_llava_dataflow.ipynb": "src/chapter2_llava_dataflow.ipynb",
+      "experiments/week1-baseline.md": "experiments/chapter1-baseline.md",
+      "experiments/week1/": "experiments/chapter1/"
+    },
+    "note": "学习命名改为章节。path、bytes、sha256 仍描述历史文件；如有 archived_copy，优先据此核验原始字节。current_path 是修改标题后的当前入口，不对应历史哈希。原始实验目录与环境名保持不变。"
+  }
+}

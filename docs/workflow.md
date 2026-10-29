@@ -18,9 +18,9 @@
 # 每次开始先同步；存在未提交修改时先处理，避免覆盖工作。
 git pull --ff-only
 
-# 明确选择要提交的文件；以下为 W1 报告的例子。
+# 明确选择要提交的文件；以下为第1章报告的例子。
 git status --short
-git add README.md index.md docs/workflow.md experiments/week1-baseline.md experiments/week1
+git add README.md index.md docs/workflow.md experiments/chapter1-baseline.md experiments/chapter1
 git diff --cached --stat
 git diff --cached
 git commit -m "Record experiment and learning notes"
@@ -36,13 +36,15 @@ git push
 | 推理、选图、评测代码与正式 notebook | `src/` | 是；notebook 提交前按下述流程清空输出 |
 | 可复用参数与安装入口 | `configs/`、`src/requirements.txt` | 是 |
 | 学习笔记、实验报告、模板 | `notes/`、`experiments/*.md`、`templates/` | 是 |
-| 小型指标、依赖快照、文件校验清单 | 如 `experiments/week1/` | 是 |
+| 小型指标、依赖快照、文件校验清单 | 如 `experiments/chapter1/` | 是 |
 | 原始图片、题目与标注 | `data/` | 否；保留独立备份 |
 | 原始预测、评分表、运行日志和实验图片 | `outputs/` | 否；保留独立备份 |
 | 模型权重与外部源码 | `checkpoints/`、`external/` | 否 |
 | Jupyter 检查点、临时诊断、环境与缓存 | `.ipynb_checkpoints/`、`cloud_debug_*/`、`.venv/`、`.cache/` 等 | 否 |
 
 在清空 notebook 输出前，先确认原始结果已保存到 `outputs/` 并完成备份；需要保留含输出 notebook 时，也另存到 `outputs/`。随后在 JupyterLab 的 Edit 菜单选择清空所有输出，保存正式 notebook，再提交。已经写入报告的原始 notebook 哈希用于标识当时的文件，清空后变化是正常的，不应改写历史校验清单。
+
+学习材料按 `chapter1`、`chapter2` 等章节编号命名，每章按目标验收后继续推进。历史实验目录、已有环境名和原始输出中的旧标识继续保留。校验清单提供 `archived_copy` 时，用该副本核验历史哈希；`current_path` 仅表示当前文件入口。
 
 `.gitignore` 只影响未跟踪文件。已被 Git 跟踪的自动检查点或临时文件，需要先用 `git rm --cached -- 具体文件路径` 停止跟踪；该命令保留本地文件。清理记录随下一次正常提交生效。不要对整个仓库批量取消跟踪。
 
